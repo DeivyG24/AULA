@@ -1,14 +1,14 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Morrida : MonoBehaviour
+public class Orbe : MonoBehaviour
 {
-    public GameManager gameManager;
+    public GameObject painelVitoria;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            gameManager.vida = 0;
-            gameManager.Derrota();
+            painelVitoria.SetActive(true);
         }
     }
 }

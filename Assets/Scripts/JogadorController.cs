@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class JogadorController : MonoBehaviour
 {
+    private Animator animator;
     public float velocidade = 5f;
     public float forcaPulo = 7.0f;
     private Rigidbody2D rb;
@@ -10,6 +11,7 @@ public class JogadorController : MonoBehaviour
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
     }
@@ -22,9 +24,13 @@ public class JogadorController : MonoBehaviour
         if (movimento > 0) sprite.flipX = false;
         if (movimento < 0) sprite.flipX = true;
 
+        if (movimento > 0 || movimento < 0) animator.SetBool("andando", true);
+        if (movimento == 0) animator.SetBool("andando", false);
+
         if (Input.GetKeyDown(KeyCode.Space) && estaNoChao)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, forcaPulo);
+            animator.SetBool("pulando", true);
         }
     }
 
@@ -33,6 +39,7 @@ public class JogadorController : MonoBehaviour
         if (collision.gameObject.CompareTag("chao"))
         {
             estaNoChao = true;
+            animator.SetBool("pulando", false);
         }
     }
     void OnCollisionExit2D(Collision2D collision)
