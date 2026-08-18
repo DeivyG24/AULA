@@ -36,8 +36,7 @@ public class JogadorController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("chao"))
-        {
+        if (collision.gameObject.CompareTag("chao")){
             estaNoChao = true;
             animator.SetBool("pulando", false);
         }
@@ -47,6 +46,7 @@ public class JogadorController : MonoBehaviour
         if (collision.gameObject.CompareTag("chao"))
         {
             estaNoChao = false;
+            animator.SetBool("estanochao", true);
         }
     }
 }
