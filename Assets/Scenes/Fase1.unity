@@ -2865,6 +2865,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Obstaculo
   gameManager: {fileID: 1490264460}
   somDano: {fileID: 8300000, guid: 56215d958147dbf4a9f98de20ad6f2dd, type: 3}
+  animator: {fileID: 2026437510}
 --- !u!1 &1400331112
 GameObject:
   m_ObjectHideFlags: 0
@@ -3272,7 +3273,6 @@ MonoBehaviour:
   - {fileID: 1692832475}
   cheio: {fileID: 21300000, guid: 436961316b62b2449ab08bcfef6daee6, type: 3}
   vazio: {fileID: 21300000, guid: baedc2bc893fb3446a12b9deecaa50d6, type: 3}
-  gameManager: {fileID: 1490264460}
 --- !u!1 &1546051858
 GameObject:
   m_ObjectHideFlags: 0
@@ -4424,6 +4424,10 @@ PrefabInstance:
       propertyPath: somDano
       value: 
       objectReference: {fileID: 8300000, guid: 56215d958147dbf4a9f98de20ad6f2dd, type: 3}
+    - target: {fileID: 2440779743577118455, guid: eca52917f09658c4c9152fa3f36eef99, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 2026437510}
     - target: {fileID: 2440779743577118455, guid: eca52917f09658c4c9152fa3f36eef99, type: 3}
       propertyPath: gameManager
       value: 
